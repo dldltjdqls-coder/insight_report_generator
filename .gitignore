@@ -1,0 +1,14 @@
+# 개인 보안 비밀번호 파일 (여기에 GEMINI_API_KEY가 적혀 있으므로 절대 GitHub에 올라가면 안 됩니다)
+.env
+
+# 파이썬 실행 시 자동 생성되는 임시 캐시 폴더 및 파일들
+__pycache__/
+*.pyc
+
+# 로컬 스케줄러 실행 시 기록되는 로그 파일들
+reports/logs/
+*.log
+
+# 운영체제 임시 파일
+.DS_Store
+Thumbs.db
