@@ -874,6 +874,18 @@ class InsightReportGenerator:
             f.write(html_content)
         print(f"[성공] HTML 리포트 저장 완료: {html_filepath}")
         
+        # 3. [보강] 즐겨찾기 고정용 최신 보고서 복사 저장
+        # reports/latest.html 및 최상단 index.html 파일에 똑같이 복사하여 덮어씁니다.
+        # 이를 통해 매일 날짜 주소를 바꾸는 번거로움 없이 하나의 대표 주소만 북마크해두면 오늘 자 새 리포트가 열립니다.
+        latest_html_filepath = os.path.join(self.output_folder, "latest.html")
+        index_html_filepath = "index.html"
+        
+        with open(latest_html_filepath, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        with open(index_html_filepath, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"[성공] 최신 고정 URL용 (latest.html 및 index.html) 복사본 저장 완료")
+        
         return md_filepath
 
     def run(self):
